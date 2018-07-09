@@ -85,6 +85,10 @@ int main() {
 
 	} while (true);
 
+	while (false) {
+		cout << "No output" << endl;
+	}
+
 	float myFloat;
 	cout << "Enter your own floating point value: " << endl;
 	cin >> myFloat;
@@ -97,14 +101,23 @@ int main() {
 		cout << "No your value isn't negative. " << endl;
 	}
 
-	bool myBoolean;
-	cout << "What's your boolean value?: Enter 1 for true and 0 for false."
-			<< endl;
-	cin >> myBoolean;
-	if (myBoolean == true) {
-		cout << "you have selected true: True" << endl;
-	} else {
-		cout << "you have selected: False" << endl;
+	for (;;) {
+		bool myBoolean;
+		cout << "What's your boolean value?: Enter 1 for true and 0 for false."
+				<< endl;
+		cin >> myBoolean;
+		if (myBoolean == true) {
+			cout << "you have selected true: True" << endl;
+		} else {
+			cout << "you have selected: False" << endl;
+		}
+
+		cout
+				<< "If you selected 1 for true, then we will break out this infinite loop"
+				<< endl;
+		if (myBoolean == 1) {
+			break;
+		}
 	}
 	return 0;
 }
